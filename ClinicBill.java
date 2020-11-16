@@ -3,7 +3,15 @@ package com.clinicalmgmt.bill;
  Implementing Interface
  */
 public class ClinicBill implements Bill {
+	
+	public interface Bill {
 
+	void createBill();
+	void modifyBill();
+	void printBill();
+	void sendBill();
+
+}
 	/* (non-Javadoc)
 	 * @see Bill#createBill()
 	 */
