@@ -1,3 +1,4 @@
+package com.threads;
 //thread class
 class MultithreadingDemo extends Thread { 
 	public void run() { 
