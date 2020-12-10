@@ -24,6 +24,12 @@ public class ClinicManagement {
 		System.out.println("\t\t\t\t\t\tTime: " + calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE) + ":" + calendar.get(Calendar.SECOND));
 
 		//ArryList to hold Clinical Data
+		//Collection to hold Doctor,patient,staff,facilities objects
+		LinkedList<String> dl=new LinkedList<String>();
+		LinkedList<String> pl=new LinkedList<String>();
+		LinkedList<String> sl=new LinkedList<String>();
+		LinkedList<String> fl=new LinkedList<String>();
+		
 		//Generic List to hold Doctor objects
 		List<Doctor> doctors = new ArrayList<Doctor>();
 		
