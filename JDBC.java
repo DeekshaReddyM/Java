@@ -22,8 +22,7 @@ public class MySqlConnection {
 			ResultSet rs=stmt.executeQuery("select * from doctor");
 			
 			while(rs.next())  
-				System.out.println(rs.getString(1)+"  "+rs.getString(2)+"  "+rs.getString(3)+" "+rs.getString(4) +
-						" "+rs.getString(5) + " "+rs.getString(6));  
+				System.out.println(rs.getString(1)+"  "+rs.getString(2)+"  "+rs.getString(3)+" "+rs.getString(4) +" "+rs.getString(5) + " "+rs.getString(6));  
 			con.close();  
 		}catch(Exception e){ 
 			System.out.println(e);
@@ -67,8 +66,8 @@ public class MySqlConnection {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        txtid = new javax.swing.JTextField();
         txtname = new javax.swing.JTextField();
-        txtcourse = new javax.swing.JTextField();
         txtage = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -256,7 +255,7 @@ public class MySqlConnection {
     }// </editor-fold>                        
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        // TODO add your handling code here
         try {
         String id,qual,name,room,specalist,appoint;
         id=txtid.getText();
@@ -293,7 +292,7 @@ public class MySqlConnection {
     }                                        
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {                                     
-        // TODO add your handling code here:
+        // TODO add your handling code here
          ds=(DefaultTableModel)jTable1.getModel();
          int selected=jTable1.getSelectedRow();
          int id=Integer.parseInt(ds.getValueAt(selected, 0).toString());
@@ -307,7 +306,7 @@ public class MySqlConnection {
     }                                    
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        // TODO add your handling code here
         ds=(DefaultTableModel)jTable1.getModel();
          int selected=jTable1.getSelectedRow();
          int id=Integer.parseInt(ds.getValueAt(selected, 0).toString());
@@ -347,13 +346,13 @@ public class MySqlConnection {
     }                                        
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        // TODO add your handling code here
          ds=(DefaultTableModel)jTable1.getModel();
          int selected=jTable1.getSelectedRow();
          int id=Integer.parseInt(ds.getValueAt(selected, 0).toString());
          try {
         
-            pat=con.prepareStatement("delete from stu3 where id=?");
+            pat=con.prepareStatement("delete from doctor where id=?");
             pat.setInt(1, id);
             pat.executeUpdate();
             JOptionPane.showMessageDialog(this,"Record has Deleted");
@@ -375,7 +374,7 @@ public class MySqlConnection {
     }                                        
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        // TODO add your handling code here
        
         this.setVisible(false);
     }                                        
@@ -383,12 +382,7 @@ public class MySqlConnection {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+    public static void main(String args[]) 
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
