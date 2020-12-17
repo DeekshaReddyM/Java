@@ -6,8 +6,7 @@ import java.util.Scanner;
  * @author Deeksha
  * This is Bean/Model Class for Patient//
 public abstract class Patient {
-	/* Has-A : Composition
-	 * Patient has a History */
+	/* Patient History */
 
 	private PatientHistory ph;
 	String pid, pname, disease, sex, admit_status;
